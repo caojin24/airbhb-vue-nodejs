@@ -1,0 +1,159 @@
+.select{
+	width: 1032px;
+	height: 100px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+	margin-top: 50px;
+	overflow: hidden;
+}
+.select input{
+	outline: none;
+	border: none;
+}
+.place {
+	width: 400px;
+	height: 100%;
+	border-right: 1px solid #ccc;
+	float: left;
+	padding: 15px;
+	.inp{
+		font-size: 20px;
+		font-weight: 700;
+	}
+}
+
+.time{
+	width: 340px;
+	height: 100%;
+	border-right: 1px solid #ccc;
+	float: left;
+	padding: 15px;
+	.ivu-input{
+		border: none;
+	}
+}
+.guest{
+	width: 190px;
+	height: 100%;
+	float: left;
+	padding: 15px;
+	.ivu-dropdown-menu{
+		padding: 15px;
+		input{
+			width: 100px;
+			height: 30px;
+		}
+		.ivu-btn{
+			margin-top: 10px;
+		}
+	}
+}
+.btn{
+	width: 80px;
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items:center;
+	.ivu-btn{
+		height: 50px;
+		width: 80px;
+		
+	}
+}
+.select .text{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.hotplace{
+	width: 1032px;
+	overflow: hidden;
+	margin:0 auto;
+	margin-top: 50px;
+	font-size: 16px;
+	.title{
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.tab{
+		font-size: 16px;
+		margin-top: 10px;
+	}
+}
+.card{
+	float: left;
+	margin-right: 13px;
+	margin-left: 10px;
+	width: 320px;
+	margin-bottom: 20px;
+	text-align: center;
+	p{
+		text-align: left;
+	}
+}
+.story{
+	width: 1032px;
+	overflow: hidden;
+	margin:0 auto;
+	margin-top: 50px;
+	.title{
+		overflow: hidden;
+		h3{
+			float: left;
+			font-size: 30px;
+			font-weight: 700;
+		}
+		p{
+			float: right;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+	.card{
+		margin-top: 20px;
+		float: left;
+		margin-right: 2px;
+		margin-right: 3px;
+		width: 246px;
+		img{
+			width: 246px;
+			height: 246px;
+		}
+	}
+}
+
+.service{
+	width: 1032px;
+	margin: 0 auto;
+	margin-top: 64px;
+	margin-bottom: 50px;
+	text-align: center;
+	p{
+		margin-top: 10px;
+	}
+}
+
+.summer{
+	width: 1032px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	h3{
+		font-size: 30px;
+		font-weight: 700px;
+		margin-bottom: 20px;
+	}
+	.card{
+		float: left;
+		width: 158px;
+		img{
+			width: 158px;
+			height: 237px;
+		}
+		.name{
+			font-size: 16px;
+			stong{
+				font-size: 20px;
+			}
+		}
+	}
+}
