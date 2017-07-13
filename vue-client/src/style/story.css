@@ -1,0 +1,20 @@
+.loglist{
+	width: 100%;
+	overflow:hidden;
+	border-bottom:1px solid #ccc;
+}
+
+.loglist .listt{
+	width: 1032px;
+	margin:0 auto;
+	margin-top:64px;
+	overflow:hidden;
+}
+.loglist .listt .card{
+	float: left;
+	margin:5px;
+	cursor: pointer;
+}
+.page{
+	margin:0 auto;
+}

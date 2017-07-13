@@ -8,6 +8,6 @@ router.get('/:type', dataCtrl.getall);
 router.delete('/:id', dataCtrl.remove);
 router.put('/data/:id', dataCtrl.update); // 修改
 router.post('/data', dataCtrl.create); // 执行控制器中的create方法
-router.delete('/:id', dataCtrl.remove);
+
 
 module.exports = router;

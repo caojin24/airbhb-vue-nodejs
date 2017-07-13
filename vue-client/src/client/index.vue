@@ -6,7 +6,7 @@
         			地点
         		</div>
         		<div class="inp">
-        			<input type="text" name="" value="" placeholder="目的地，城市，地址">
+        			<input type="text" name="" v-model="city" placeholder="目的地，城市，地址">
         		</div>
         	</div>
         	<div class="time">
@@ -37,7 +37,7 @@
 				</div>
         	</div>
         	<div class="btn">
-        		<Button type="error">搜索</Button>
+        		<Button type="error" @click="search">搜索</Button>
         	</div>
         </div>
 
@@ -68,9 +68,9 @@
 					            </p>
 					        </div>	
 			        	</div>
-			        	<div>	
+			        	<router-link to="/hotlist/596589a68d95eabf4b97ebc5">
 							<Button type="ghost">查看更多房源</Button>
-			        	</div>
+			        	</router-link>
 			        </Tab-pane>
 			        <Tab-pane label="上海" name="name3">
 			        	<div class="list">
@@ -81,9 +81,9 @@
 					            </p>
 					        </div>	
 			        	</div>
-			        	<div>	
+			        	<router-link to="/hotlist/596589a98d95eabf4b97ebc6">
 							<Button type="ghost">查看更多房源</Button>
-			        	</div>
+			        	</router-link>
 			        </Tab-pane>
 			        <Tab-pane label="洛杉矶" name="name4">
 			        	
@@ -98,13 +98,15 @@
         <div class="story">
         	<div class="title"> 
         		<h3>热门故事</h3>
-        		<p>浏览更多<Icon type="chevron-right"></Icon></p>
+        		<p style="cursor: pointer" @click="more">浏览更多<Icon type="chevron-right"></Icon></p>
         	</div>
         	<Row>
 		        <Col span="6" v-for="story in storys" >
 		        	<div class="card">
 		        		<img :src="story.img" alt="">
-		        		<p><strong>{{story.name}}</strong></p>
+						
+		        			<p style="cursor:pointer" @click="toStory(story._id)"><strong>{{story.name}}</strong></p>
+						
 		        		<p><Icon type="chatbox-working"></Icon>{{story.commentCount}}</p>
 		        	</div>
 		        </Col>
@@ -197,7 +199,8 @@
         data () {
             return {
                 visible: false,
-                guest:1
+                guest:1,
+                city:''
             }
         },
         methods: {
@@ -214,7 +217,22 @@
             	 var html;
             	 html=string.replace(/^(\<p\>)/,'').replace(/(\<\/p\>)$/,'');
             	 return html;
-            }
+            },
+            toStory(id){
+            	this.$router.push({path:`/storylist/${id}`})
+            },
+            more(){
+            	this.$router.push({path:'/story'})
+            },
+           	search(){
+           		if(this.city == '杭州'){
+           			this.$router.push({path:'/hotlist/596589a28d95eabf4b97ebc4'});
+           		}else if(this.city =='上海'){
+           			this.$router.push({path:'/hotlist/596589a98d95eabf4b97ebc6'});
+           		}else {
+           			this.$router.push({path:'/hotlist/596589a68d95eabf4b97ebc5'});
+           		}
+           	}
         }
     }
 

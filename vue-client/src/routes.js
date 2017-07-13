@@ -3,7 +3,8 @@ import Index from "./client/index.vue";
 import Header from "./client/header.vue";
 import Bottom from "./client/bottom.vue";
 import Hotlist from "./client/hotlist.vue";
-
+import Storylist from "./client/storylist.vue";
+import Story from "./client/story.vue";
 export const routes = [
     { 
         path:'/',components:{
@@ -17,5 +18,11 @@ export const routes = [
     },
     {
         path:'/hotlist/:id',component:Hotlist
+    },
+    {
+        path:'/story',component:Story
+    },
+    {
+        path:'/storylist/:id',component:Storylist
     }
 ]
