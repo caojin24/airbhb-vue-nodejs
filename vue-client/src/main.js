@@ -6,7 +6,11 @@ import {routes} from "./routes";
 import iview from 'iview';
 import 'iview/dist/styles/iview.css';    // 使用 CSS
 
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+
+Vue.use(VueAxios, axios);
 
 Vue.use(VueRouter);
 Vue.use(iview);

@@ -45,73 +45,50 @@
         	<h3 class="title">热门目的地</h3>
 			<div class="tab">
 				<Tabs value="name1">
-			        <Tab-pane label="洛杉矶" name="name1">
+			        <Tab-pane label="杭州" name="name1">
 			        	<div class="list">
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					            <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-					            <p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
+					        <div class="card" v-for="hzdata in HZlist">
+					            <img :src="hzdata.name" style="width:333px;height: 222px;">
+					            <p>{{render(hzdata.desc)}}</p>
+					            <p><Icon type="ios-star" v-for="n in 5" :key="n"></Icon>&nbsp;<span>{{hzdata.commentCount}} 条评价</span>
 					            </p>
-					        </div>
-					    
-					   
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					             <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-					              <p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
+					        </div>	
+			        	</div>
+			        	<router-link to="/hotlist/596589a28d95eabf4b97ebc4">
+							<Button type="ghost">查看更多房源</Button>
+			        	</router-link>
+			        	
+			        </Tab-pane>
+			        <Tab-pane label="北京" name="name2">
+			        	<div class="list">
+					        <div class="card" v-for="bjdata in BJlist">
+					            <img :src="bjdata.name" style="width:333px;height: 222px;">
+					            <p>{{render(bjdata.desc)}}</p>
+					            <p><Icon type="ios-star" v-for="n in 5" :key="n"></Icon>&nbsp;<span>{{bjdata.commentCount}} 条评价</span>
 					            </p>
-					        </div>
-					    
-
-		        
-			        	 
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					            <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-						       <p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
-						            </p>
-					        </div>
-					
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					         
-					            <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-				              	<p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
-						            </p>
-					        </div>
-					    
-		        	
-			        	 
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					            <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-					           <p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
-						            </p>
-					        </div>
-					    
-					        <div class="card">
-					            <img src="https://z0.muscache.com/im/pictures/54730357/b41ff5ee_original.jpg?aki_policy=large" style="width:320px">
-					            <p><strong>¥333</strong>&nbsp;洛杉矶-整套房子／公寓</p>
-					            <p><Icon type="ios-star" v-for="n in 5"></Icon>&nbsp;<span>55条评价</span>
-						            </p>
-					        </div>
-								
+					        </div>	
 			        	</div>
 			        	<div>	
 							<Button type="ghost">查看更多房源</Button>
 			        	</div>
+			        </Tab-pane>
+			        <Tab-pane label="上海" name="name3">
+			        	<div class="list">
+					        <div class="card" v-for="shdata in SHlist">
+					            <img :src="shdata.name" style="width:333px;height: 222px;">
+					            <p>{{render(shdata.desc)}}</p>
+					            <p><Icon type="ios-star" v-for="n in 5" :key="n"></Icon>&nbsp;<span>{{shdata.commentCount}} 条评价</span>
+					            </p>
+					        </div>	
+			        	</div>
+			        	<div>	
+							<Button type="ghost">查看更多房源</Button>
+			        	</div>
+			        </Tab-pane>
+			        <Tab-pane label="洛杉矶" name="name4">
 			        	
 			        </Tab-pane>
-			        <Tab-pane label="巴黎" name="name2">
-			        	
-			        </Tab-pane>
-			        <Tab-pane label="纽约" name="name3">
-			        	
-			        </Tab-pane>
-			        <Tab-pane label="北京" name="name4">
-			        	
-			        </Tab-pane>
-			        <Tab-pane label="杭州" name="name5">
+			        <Tab-pane label="巴黎" name="name5">
 			        	
 			        </Tab-pane>
 			    </Tabs>
@@ -124,34 +101,14 @@
         		<p>浏览更多<Icon type="chevron-right"></Icon></p>
         	</div>
         	<Row>
-		        <Col span="6">
+		        <Col span="6" v-for="story in storys" >
 		        	<div class="card">
-		        		<img src="https://z0.muscache.com/im/pictures/bfd7ace7-a39c-487a-b7d4-70a9844301b4.jpg?aki_policy=large" alt="">
-		        		<p><strong>世界的百科全书LACMA</strong></p>
-		        		<p><Icon type="chatbox-working"></Icon></p>
+		        		<img :src="story.img" alt="">
+		        		<p><strong>{{story.name}}</strong></p>
+		        		<p><Icon type="chatbox-working"></Icon>{{story.commentCount}}</p>
 		        	</div>
 		        </Col>
-		        <Col span="6">
-		        	<div class="card">
-		        		<img src="https://z0.muscache.com/im/pictures/bfd7ace7-a39c-487a-b7d4-70a9844301b4.jpg?aki_policy=large" alt="">
-		        		<p><strong>世界的百科全书LACMA</strong></p>
-		        		<p><Icon type="chatbox-working"></Icon></p>
-		        	</div>
-		        </Col>
-		        <Col span="6">
-		        	<div class="card">
-		        		<img src="https://z0.muscache.com/im/pictures/bfd7ace7-a39c-487a-b7d4-70a9844301b4.jpg?aki_policy=large" alt="">
-		        		<p><strong>世界的百科全书LACMA</strong></p>
-		        		<p><Icon type="chatbox-working"></Icon></p>
-		        	</div>
-		        </Col>
-		        <Col span="6">
-		        	<div class="card">
-		        		<img src="https://z0.muscache.com/im/pictures/bfd7ace7-a39c-487a-b7d4-70a9844301b4.jpg?aki_policy=large" alt="">
-		        		<p><strong>世界的百科全书LACMA</strong></p>
-		        		<p><Icon type="chatbox-working"></Icon></p>
-		        	</div>
-		        </Col>
+		        
 		    </Row>
 	
         </div>
@@ -234,8 +191,9 @@
 </template>
 
 <script>
-
+	import Base from "../common/Base";
 	export default {
+		mixins:[Base],
         data () {
             return {
                 visible: false,
@@ -252,7 +210,11 @@
             addguest(){
             	this.guest = parseInt(this.guest)+1;
             },
-
+            render(string){
+            	 var html;
+            	 html=string.replace(/^(\<p\>)/,'').replace(/(\<\/p\>)$/,'');
+            	 return html;
+            }
         }
     }
 

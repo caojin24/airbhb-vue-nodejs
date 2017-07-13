@@ -2,10 +2,11 @@ import Login from "./client/login.vue";
 import Index from "./client/index.vue";
 import Header from "./client/header.vue";
 import Bottom from "./client/bottom.vue";
+import Hotlist from "./client/hotlist.vue";
 
 export const routes = [
     { 
-        path:'',components:{
+        path:'/',components:{
             default:Index,
             'header-top':Header,
             'header-bottom':Bottom
@@ -13,5 +14,8 @@ export const routes = [
     },
     {
         path:'/login',component:Login
+    },
+    {
+        path:'/hotlist/:id',component:Hotlist
     }
 ]

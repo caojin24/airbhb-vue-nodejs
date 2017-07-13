@@ -18,7 +18,10 @@
                 <Form-item label="姓名" prop="name">
                     <Input v-model="formValidate.name" placeholder="请输入标题"></Input>
                 </Form-item>
-                <Form-item label="日志内容" prop="desc">
+                <Form-item label="图片" prop="img">
+                    <Input v-model="formValidate.img" placeholder="请输入图片地址"></Input>
+                </Form-item>
+                <Form-item label="故事内容" prop="desc">
                     <quill-editor v-model="formValidate.desc" ref="myQuillEditor"></quill-editor>
                 </Form-item>
                 <Form-item>
@@ -75,10 +78,16 @@
                     cateId:null,
                     _id: null,
                     name: '',
-                    desc: ''
+                    desc: '',
+                    img:''
                 },
                 ruleValidate: {
                     name: [{
+                        required: true,
+                        message: '标题不能为空',
+                        trigger: 'blur'
+                    }],
+                    img:[{
                         required: true,
                         message: '标题不能为空',
                         trigger: 'blur'
@@ -104,6 +113,10 @@
                     {
                         title: '标题',
                         key: 'name'
+                    },
+                    {
+                        title:'图片',
+                        key:'img'
                     },
                     {
                         title: '评论数',
@@ -141,7 +154,6 @@
                                         }
                                     }
                                 },'删除')
-
                             ])
                         }
                     }

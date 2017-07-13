@@ -2,7 +2,7 @@
 <div>
     <Row id="header">
         <Col span="12">
-             <div id='logo'>
+             <div id='logo' @click="jump">
                 爱彼迎
             </div>
         </Col>
@@ -38,7 +38,13 @@
     
 </template>
 <script>
-    
+    export default {
+        methods:{
+            jump(){
+                this.$router.push('/');
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>

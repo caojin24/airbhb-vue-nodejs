@@ -2,6 +2,7 @@
 #header{
     width: 100%;
     height: 88px;
+    cursor: pointer;
 }
 #logo{
     width:48px;

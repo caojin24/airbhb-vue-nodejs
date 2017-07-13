@@ -6,6 +6,7 @@ var ObjectId = Schema.ObjectId;
 var LogSchema = new Schema({
     name: String,
     desc: String,
+    img:String,
     author: {},
     commentCount: Number,
     cateId: ObjectId,

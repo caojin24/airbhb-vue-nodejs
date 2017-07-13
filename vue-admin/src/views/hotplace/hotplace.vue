@@ -17,7 +17,7 @@
                     <Input v-model="formValidate.name" placeholder="请输入图片地址"></Input>
                 </Form-item>
                 <Form-item label="描述" prop="desc">
-                    <quill-editor v-model="formValidate.desc" ref="myQuillEditor"></quill-editor>
+                    <Input v-model="formValidate.desc" placeholder="请输入描述(价格、类型等)"></Input>
                 </Form-item>
                 <Form-item>
                     <Button type="primary" @click="handleSubmit('formValidate')">提交</Button>
@@ -104,6 +104,10 @@
                         key: 'name'
                     },
                     {
+                        title:'描述',
+                        key:'desc'
+                    },
+                    {
                         title: '评论数',
                         key: 'commentCount'
                     },
@@ -154,6 +158,7 @@
                     title : node[0].title
                 }
                 this.filter.cateId = node[0]._id;
+                console.log(node[0]._id);
                 this.getData()
             }
         }
