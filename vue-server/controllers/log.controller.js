@@ -30,7 +30,7 @@ exports.update = function(req, res, next) {
 
 exports.list = function(req, res, next) {
     var page = (req.body.page) ? req.body.page : 1;
-    var limit = (req.body.limit) ? req.body.limit : 5;
+    var limit = (req.body.limit) ? req.body.limit : 6;
     var queryCondition = {};
     if (req.body.name && req.body.name.trim()
         .length > 0) {

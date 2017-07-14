@@ -26,11 +26,11 @@ exports.list = function (req, res, next) {
   var page = (req.body.page) ? req.body.page : 1;
   var limit = (req.body.limit) ? req.body.limit : 5;
   var queryCondition = {};
-  if (req.body.name && req.body.name.trim()
+  if (req.body.logId && req.body.logId.trim()
     .length > 0) {
-    name = req.body.name;
+    logId = req.body.logId;
     queryCondition = {
-      "name": new RegExp(name, "i")
+      "logId": logId
     }
   }
 

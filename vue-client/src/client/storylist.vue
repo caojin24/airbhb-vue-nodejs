@@ -52,7 +52,7 @@
 				filter:{
 					page: 1,
 					limit: 5,
-					name: '',
+					logId: this.$route.params.id,
 					total: 0
 				},
 				valueCustomText: 3.8,
@@ -92,6 +92,13 @@
 				var _this = this;
 				_this.$http.post('http://localhost:3000/comment/list',_this.filter)
 				.then(function(response){
+					// var list=[];
+					// for(var i=0;i<response.data.docs.length;i++){
+					// 	if(response.data.docs[i].logId == _this.$route.params.id){
+					// 		list.push(response.data.docs[i]);
+					// 	}
+					// }
+					console.log(response.data);
 					_this.commentLists = response.data.docs;
 					_this.filter.total = response.data.total;
 				})
@@ -114,11 +121,6 @@
             	 html=string.replace(/^(\<p\>)/,'').replace(/(\<\/p\>)$/,'');
             	 return html;
             }
-		},
-		watch:{
-			commentLists:function(a,b){
-				console.log(a);
-			}
 		},
 		created(){
 			this.getData();
